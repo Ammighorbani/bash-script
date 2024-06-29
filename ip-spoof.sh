@@ -30,6 +30,6 @@ do
         sudo ip a
 
         # To do nmap on your target ip
-        sudo nmap ["Target-Ip"] -p ["Srvs-Ip"]
+        sudo nmap ["Target-Ip"] -p ["Srv-Port"]
 
 done
