@@ -15,13 +15,13 @@ do
         sudo ip a
 
         # To down your ip service
-        sudo ip link test down
+        sudo ip link set down
 
         # To Add ip into your ip list
         sudo ip addr add 192.168.1.$i/24 dev eth0
 
         # To up your ip service
-        sudo ip link test up
+        sudo ip link set up
 
         # To show which ip is trying to do nmap
         echo 192.168.1.$i
