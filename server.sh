@@ -43,9 +43,9 @@ founded_ip=$(ip -br a | awk '/^eth0/ { for (i=1; i<=NF; i++) if ($i ~ /^[0-9]+\.
 
 echo "4- create a home directory for users and change the things in this json file"
 
-cd /home && mkdir mamadian
+cd /home && mkdir ammi
 
-echo "{\"v\": \"2\",\"ps\": \"ammighorbani-2th\",\"add\": \"$founded_ip\",\"port\": \"2526\",\"id\": \"7e955b63-2d08-5ba9-9fbc-7468786854ab\",\"aid\": \"0\",\"net\": \"tcp\",\"type\": \"none\",\"host\": \"\",\"path\": \"\",\"tls\": \"\"}" > /home/mamadian/ammi-vmess.json
+echo "{\"v\": \"2\",\"ps\": \"ammighorbani-2th\",\"add\": \"$founded_ip\",\"port\": \"2526\",\"id\": \"7e955b63-2d08-5ba9-9fbc-7468786854ab\",\"aid\": \"0\",\"net\": \"tcp\",\"type\": \"none\",\"host\": \"\",\"path\": \"\",\"tls\": \"\"}" > /home/ammi/ammi-vmess.json
 
 
 echo "5- sanaie paneli"
