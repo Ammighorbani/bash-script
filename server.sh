@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo su -
+
 # how to create server:
 
 echo "1- to install v2fly files"
@@ -49,3 +51,13 @@ echo "{\"v\": \"2\",\"ps\": \"ammighorbani-2th\",\"add\": \"$founded_ip\",\"port
 echo "5- sanaie paneli"
 
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+
+echo "6- install base64"
+
+apt install coreutils -y
+
+echo "7- create v2ray config"
+
+config_text=$(base64 -w 0 /home/ammi/ammi-vmess.json)
+
+echo -n "vmess://$config_text"
