@@ -61,3 +61,7 @@ echo "7- create v2ray config"
 config_text=$(base64 -w 0 /home/ammi/ammi-vmess.json)
 
 echo -n "vmess://$config_text"
+
+echo "8- restarting v2ray.service"
+
+systemctl restart v2ray.service
