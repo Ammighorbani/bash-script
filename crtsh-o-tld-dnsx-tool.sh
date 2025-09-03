@@ -60,7 +60,9 @@ echo "Please wait doing dnsx..."
 
 cat $file | dnsx -silent -r 8.8.4.4 >> chupdomains
 
-cat chupdomains
+echo "Please wait doing httpx..."
+
+cat chupdomains | httpx -silent -follow-host-redirects -title -status-code -tech-detect -H "User-Agent: Mozilla/5.0 (Macintosh; intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0" -H "Referer:  https://$domain" -threads 1 >> httpx-resault.txt
 
 
 read -p "wanna remove useless files?" removeyn
@@ -73,3 +75,5 @@ else
     echo "Kipping useless files"
 
 fi
+
+echo "check httpx-resault.txt file for httpx output anytime you want"
