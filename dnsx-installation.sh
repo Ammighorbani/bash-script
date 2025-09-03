@@ -1,4 +1,4 @@
-install dnsx
+    install dnsx
 
 filename: install dnsx
 
@@ -8,9 +8,7 @@ filename: install dnsx
 sudo apt update -y && apt upgrade -y && apt install jq -y
 
 #installing golang
-wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf go1.22.6.linux-amd64.tar.gz
+snap install go --classic
 
 #exporting golang to our system paths
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.bashrc
