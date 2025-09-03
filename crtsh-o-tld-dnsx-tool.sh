@@ -45,10 +45,10 @@ fi
 
 file=""
 
-if [[ -f "${domain}-sorted.txt" ]]; then
-            file="${domain}-sorted.txt"
-    elif [[ -f "${domain}-greped.txt" ]]; then
-                file="${domain}-greped.txt"
+if [[ -f "${domain}-greped.txt" ]]; then
+            file="${domain}-greped.txt"
+    elif [[ -f "${domain}-sorted.txt" ]]; then
+                file="${domain}-sorted.txt"
         else
                     echo "No file found for domain: $domain"
                         exit 1
@@ -58,10 +58,20 @@ fi
 
 echo "Please wait doing dnsx..."
 
-while read -r chupdomain; do
-                                   echo $chumpdomain | dnsx -silent -r 8.8.4.4
-                            done < "$file" >> chupdomains
+cat $file | dnsx -silent -r 8.8.4.4 >> chupdomains
 
 cat chupdomains
 
-rm $domain-*.txt
+
+read -p "wanna remove useless files?" removeyn
+if [[ "$removeyn" == "Y" || "$removeyn" == "y" ]]; then
+
+    rm ${domain}-sorted.*
+    rm ${domain}-cert.*
+    rm ${domain}-greped.*
+
+else
+
+    echo "Kipping useless files"
+
+fi
