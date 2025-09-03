@@ -1,7 +1,3 @@
-    install dnsx
-
-filename: install dnsx
-
 #!/bin/bash
 
 # update system
@@ -21,11 +17,3 @@ go version
 sudo go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 
 dnsx -h
-
-
-up toplevel finder
-
-filename: toplevel dnsx tool
-
-read domain
-curl -s https://data.iana.org/TLD/tlds-alpha-by-domain.txt | tail -n +2 | tr 'A-Z'  'a-z' | sed "s/^/${domain}./" | dnsx -silent -r 8.8.4.4
