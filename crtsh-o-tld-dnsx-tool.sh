@@ -66,9 +66,7 @@ cat chupdomains
 read -p "wanna remove useless files?" removeyn
 if [[ "$removeyn" == "Y" || "$removeyn" == "y" ]]; then
 
-    rm ${domain}-sorted.*
-    rm ${domain}-cert.*
-    rm ${domain}-greped.*
+    rm $domain-*.*
 
 else
 
