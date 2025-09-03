@@ -12,7 +12,7 @@ read organization
 
 # chained command
 
-curl "https://crt.sh/?O=$organization&output=json" > $domain-cert.json && ls | grep $domain-cert.json
+curl "https://crt.sh/?O=`echo $organization`&output=json" > $domain-cert.json && ls | grep $domain-cert.json | 
 cat $domain-cert.json | jq -r ".[].common_name" | sort -u > $domain-sorted.txt
 
 echo "you can do more customize on your output with unfurl tool"
